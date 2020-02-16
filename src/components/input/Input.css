@@ -1,0 +1,44 @@
+.form {
+  max-width: 68.5rem;
+  height: 6.4rem;
+  background: #f3f3f3;
+  border-radius: 32px;
+  border: none;
+
+  display: flex;
+  flex-direction: row;
+  padding: 1.4rem 3rem;
+}
+
+.form_input {
+  flex-grow: 2;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  line-height: 25px;
+  background: #f3f3f3;
+  color: #929292;
+}
+
+.send_btn {
+  background: none;
+  background: #f3f3f3;
+  border: none;
+}
+
+/* iPhone X and Xs Max */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+    .form{
+      padding: 1.6rem 2rem;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    
+}
