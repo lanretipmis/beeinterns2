@@ -10,6 +10,7 @@ const Message = ({ msg }) => {
       <img
         src={type === "client" ? ClientAvatar : BotAvatar}
         className="message_avatar"
+        alt='avatar'
       />
       <div
         className="message_text"

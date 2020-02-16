@@ -17,7 +17,7 @@ const Input = () => {
       return false;
     }
     sendMessage({
-      text: msgText,
+      text: msgText.trim(),
       type: "client",
       id: uuid.v4()
     });
