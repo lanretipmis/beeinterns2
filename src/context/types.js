@@ -6,3 +6,4 @@ export const CALCULATED = "CALCULATED";
 export const NOT_NUMS = "NOT_NUMS";
 export const GREETING = "GREETING";
 export const WRONG_COMMAND = "WRONG_COMMAND";
+export const FORECAST = "FORECAST";

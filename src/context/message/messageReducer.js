@@ -6,12 +6,25 @@ import {
   CALCULATED,
   NOT_NUMS,
   GREETING,
-  WRONG_COMMAND
+  WRONG_COMMAND,
+  FORECAST
 } from "../types";
 import uuid from "uuid";
 
 export default (state, action) => {
   switch (action.type) {
+    case FORECAST:
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          {
+            text: `${action.payload.summary}`,
+            type: "bot",
+            id: uuid.v4()
+          }
+        ]
+      };
     case SET_NUMS:
       return {
         ...state,
