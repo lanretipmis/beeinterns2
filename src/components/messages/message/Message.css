@@ -24,6 +24,10 @@
   grid-column-start: 0;
 }
 
+.skycons{
+  max-width: 7rem;
+}
+
 @media only screen 
     and (min-device-width: 375px) 
     and (min-device-height: 812px) 

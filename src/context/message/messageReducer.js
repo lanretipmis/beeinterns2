@@ -20,6 +20,7 @@ export default (state, action) => {
           ...state.messages,
           {
             text: `${action.payload.summary}`,
+            icon: action.payload.icon,
             type: "bot",
             id: uuid.v4()
           }

@@ -26,7 +26,7 @@ const Input = () => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className='form' onSubmit={onSubmit}>
       <input
         className="form_input"
         type="text"
@@ -35,7 +35,7 @@ const Input = () => {
         onChange={e => setMsgText(e.target.value)}
       />
       <button type="submit" className="send_btn">
-        <img src={msgText.trim().length === 0 ? btn_disable : btn} />
+        <img src={msgText.trim().length === 0 ? btn_disable : btn} alt='img'/>
       </button>
     </form>
   );

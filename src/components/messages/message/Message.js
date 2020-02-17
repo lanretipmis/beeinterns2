@@ -2,6 +2,7 @@ import React from "react";
 import "./Message.css";
 import BotAvatar from "./BotAvatar.png";
 import ClientAvatar from "./ClientAvatar.png";
+import Skycons from "react-skycons";
 
 const Message = ({ msg }) => {
   const { text, type } = msg;
@@ -10,7 +11,7 @@ const Message = ({ msg }) => {
       <img
         src={type === "client" ? ClientAvatar : BotAvatar}
         className="message_avatar"
-        alt='avatar'
+        alt="avatar"
       />
       <div
         className="message_text"
@@ -21,6 +22,10 @@ const Message = ({ msg }) => {
         }
       >
         <p>{text}</p>
+        //icon for Weather command
+        {msg.icon && (
+          <Skycons className='skycons' color="black" icon={msg.icon.toUpperCase()} autoplay={true} />
+        )}
       </div>
     </div>
   );
