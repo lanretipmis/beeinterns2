@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import uuid from "uuid";
 import MessageContext from "../../context/message/messageContext";
 import btn from "./btn.png";
@@ -10,6 +10,7 @@ const Input = () => {
   const { sendMessage } = messageContext;
 
   const [msgText, setMsgText] = useState("");
+  const [typing, setTyping] = useState(false);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -23,21 +24,36 @@ const Input = () => {
     });
 
     setMsgText("");
+    setTyping(false)
   };
 
   return (
-    <form className='form' onSubmit={onSubmit}>
-      <input
-        className="form_input"
-        type="text"
-        placeholder="Message..."
-        value={msgText}
-        onChange={e => setMsgText(e.target.value)}
-      />
-      <button type="submit" className="send_btn">
-        <img src={msgText.trim().length === 0 ? btn_disable : btn} alt='img'/>
-      </button>
-    </form>
+    <Fragment>
+      {typing && (
+        <div className="typing-container">
+          <p className="saving">
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+          </p>
+        </div>
+      )}
+      <form className="form" onSubmit={onSubmit}>
+        <input
+          className="form_input"
+          type="text"
+          placeholder="Message..."
+          value={msgText}
+          onChange={e => {setMsgText(e.target.value);setTyping(true);setInterval(()=>setTyping(false),1400)}}
+        />
+        <button type="submit" className="send_btn">
+          <img
+            src={msgText.trim().length === 0 ? btn_disable : btn}
+            alt="img"
+          />
+        </button>
+      </form>
+    </Fragment>
   );
 };
 

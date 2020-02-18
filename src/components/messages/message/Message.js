@@ -6,6 +6,7 @@ import Skycons from "react-skycons";
 
 const Message = ({ msg }) => {
   const { text, type } = msg;
+
   return (
     <div className="message_container">
       <img

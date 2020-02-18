@@ -35,7 +35,7 @@ const MessageState = props => {
       //start command
       dispatch({
         type: START
-      });
+      })
     } else if (msg.text === "/stop") {
       //stop command
       dispatch({
@@ -76,7 +76,7 @@ const MessageState = props => {
     } else if (msg.text === "/weather") {
       //weather command
       //FetchWeather from external file, use DarkSky API
-      const forecast = await fetchWeather()
+      const forecast = await fetchWeather();
       dispatch({
         type: FORECAST,
         payload: forecast
