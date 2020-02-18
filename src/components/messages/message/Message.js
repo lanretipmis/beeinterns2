@@ -22,7 +22,6 @@ const Message = ({ msg }) => {
         }
       >
         <p>{text}</p>
-        //icon for Weather command
         {msg.icon && (
           <Skycons className='skycons' color="black" icon={msg.icon.toUpperCase()} autoplay={true} />
         )}
