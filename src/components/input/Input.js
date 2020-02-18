@@ -11,6 +11,7 @@ const Input = () => {
 
   const [msgText, setMsgText] = useState("");
   const [typing, setTyping] = useState(false);
+  let timeout = null;
 
   const onSubmit = e => {
     e.preventDefault();
@@ -24,14 +25,14 @@ const Input = () => {
     });
 
     setMsgText("");
-    setTyping(false)
+    setTyping(false);
   };
 
   return (
     <Fragment>
       {typing && (
         <div className="typing-container">
-          <p className="saving">
+          <p className="typing">
             <span>.</span>
             <span>.</span>
             <span>.</span>
@@ -44,7 +45,12 @@ const Input = () => {
           type="text"
           placeholder="Message..."
           value={msgText}
-          onChange={e => {setMsgText(e.target.value);setTyping(true);setInterval(()=>setTyping(false),1400)}}
+          onChange={e => {
+            setMsgText(e.target.value);
+            setTyping(true)
+            clearTimeout(timeout)
+            timeout = setTimeout(()=>setTyping(false),1400)
+          }}
         />
         <button type="submit" className="send_btn">
           <img

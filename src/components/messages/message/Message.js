@@ -24,7 +24,7 @@ const Message = ({ msg }) => {
       >
         <p>{text}</p>
         {msg.icon && (
-          <Skycons className='skycons' color="black" icon={msg.icon.toUpperCase()} autoplay={true} />
+          <Skycons className='skycons' color="black" icon={msg.icon.toUpperCase().replace('-','_')} autoplay={true} />
         )}
       </div>
     </div>

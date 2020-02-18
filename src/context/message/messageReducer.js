@@ -20,7 +20,7 @@ export default (state, action) => {
           ...state.messages,
           {
             text: `${action.payload.summary}`,
-            icon: action.payload.icon,
+            icon: action.payload.icon.replace('-','_'),
             type: "bot",
             id: uuid.v4()
           }
