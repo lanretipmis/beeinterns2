@@ -13,12 +13,46 @@
   justify-items: space-between;
 }
 
-/* iPhone X and Xs Max */
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
 @media only screen 
     and (min-device-width: 375px) 
     and (min-device-height: 812px) 
     and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) { 
+    .Chat{
+      width: 100vw;
+      height: 93vh;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .Chat{
+      width: 100vw;
+      height: 93vh;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
     .Chat{
       width: 100vw;
       height: 93vh;
