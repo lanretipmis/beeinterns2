@@ -2,7 +2,7 @@ import React from "react";
 import MessageState from "../context/message/MessageState";
 
 import "./Chat.css";
-import Header from '../components/header/Header'
+import Header from '../components/Header/Header'
 import Input from "./input/Input";
 import Messages from "./messages/Messages";
 
