@@ -10,7 +10,6 @@
 
   display: flex;
   flex-direction: column;
-  justify-items: space-between;
 }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */

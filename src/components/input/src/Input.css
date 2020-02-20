@@ -120,7 +120,6 @@
     }
 }
 
-
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
@@ -137,7 +136,7 @@
     }
 
     .typing-container{
-      top: 50rem;
+      top: 51rem;
       right: 2rem;
       display: block;
     }
@@ -156,7 +155,7 @@
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
     .typing-container{
-      top: 56rem;
+      top: 57.5rem;
       right: 3.4rem;
       display: block;
     }
