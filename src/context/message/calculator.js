@@ -12,5 +12,7 @@ export default function calculator(num1, num2, mark) {
         } else {
           return "не делится на нуль";
         }
+      default:
+        return false;
     }
   }

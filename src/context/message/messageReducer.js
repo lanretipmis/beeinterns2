@@ -7,7 +7,8 @@ import {
   NOT_NUMS,
   GREETING,
   WRONG_COMMAND,
-  FORECAST
+  FORECAST,
+  FALSE_START
 } from "../types";
 import uuid from "uuid";
 
@@ -58,6 +59,7 @@ export default (state, action) => {
     case START:
       return {
         ...state,
+        started: true,
         messages: [
           ...state.messages,
           {
@@ -67,6 +69,19 @@ export default (state, action) => {
           }
         ]
       };
+    case FALSE_START: {
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          {
+            text: "Введите команду /start, для начала общения",
+            type: "bot",
+            id: uuid.v4()
+          }
+        ]
+      }
+      }
     case GREETING:
       return {
         ...state,
@@ -82,6 +97,7 @@ export default (state, action) => {
     case STOP:
       return {
         ...state,
+        started: false,
         messages: [
           ...state.messages,
           {

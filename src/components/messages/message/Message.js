@@ -1,7 +1,7 @@
 import React from "react";
-import "./Message.css";
-import BotAvatar from "./BotAvatar.png";
-import ClientAvatar from "./ClientAvatar.png";
+import "./src/Message.css";
+import BotAvatar from "./src/BotAvatar.png";
+import ClientAvatar from "./src/ClientAvatar.png";
 import Skycons from "react-skycons";
 
 const Message = ({ msg }) => {

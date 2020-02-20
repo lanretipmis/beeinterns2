@@ -12,13 +12,15 @@ import {
   NOT_NUMS,
   GREETING,
   WRONG_COMMAND,
-  FORECAST
+  FORECAST,
+  FALSE_START
 } from "../types";
 
 const MessageState = props => {
   const initialState = {
     messages: [],
-    numbers: []
+    numbers: [],
+    started: false
   };
 
   const [state, dispatch] = useReducer(MessageReducer, initialState);
@@ -36,22 +38,22 @@ const MessageState = props => {
       dispatch({
         type: START
       })
-    } else if (msg.text === "/stop") {
+    } else if (state.started && msg.text === "/stop") {
       //stop command
       dispatch({
         type: STOP
       });
-    } else if (msg.text.includes("/name:")) {
+    } else if (state.started && msg.text.includes("/name:")) {
       //name command
       const name = msg.text.replace("/name:", "");
       dispatch({
         type: GREETING,
         payload: name
       });
-    } else if (msg.text.includes("/number:")) {
+    } else if (state.started && msg.text.includes("/number:")) {
       //number command
       const arrOfNums = msg.text.replace("/number:", "").split(",");
-      if (!isNaN(parseInt(arrOfNums[0])) && !isNaN(parseInt(arrOfNums[1]))) {
+      if (state.started && !isNaN(parseInt(arrOfNums[0])) && !isNaN(parseInt(arrOfNums[1]))) {
         dispatch({
           type: SET_NUMS,
           payload: arrOfNums
@@ -61,19 +63,19 @@ const MessageState = props => {
           type: NOT_NUMS
         });
       }
-    } else if (
+    } else if (state.started && (
       //calc command
       msg.text === "+" ||
       msg.text === "-" ||
       msg.text === "*" ||
-      msg.text === "/"
+      msg.text === "/")
     ) {
       let res = calculator(+state.numbers[0], +state.numbers[1], msg.text);
       dispatch({
         type: CALCULATED,
         payload: res
       });
-    } else if (msg.text === "/weather") {
+    } else if (state.started && msg.text === "/weather") {
       //weather command
       //FetchWeather from external file, use DarkSky API
       const forecast = await fetchWeather();
@@ -81,11 +83,15 @@ const MessageState = props => {
         type: FORECAST,
         payload: forecast
       });
-    } else {
+    } else if(state.started && msg.text){
       //wrong command
       dispatch({
         type: WRONG_COMMAND
       });
+    } else {
+      dispatch({
+        type:FALSE_START
+      })
     }
   };
 

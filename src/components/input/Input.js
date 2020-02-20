@@ -1,9 +1,9 @@
 import React, { useState, useContext, Fragment } from "react";
 import uuid from "uuid";
 import MessageContext from "../../context/message/messageContext";
-import btn from "./btn.png";
-import btn_disable from "./btn_disable.png";
-import "./Input.css";
+import btn from "./src/btn.png";
+import btn_disable from "./src/btn_disable.png";
+import "./src/Input.css";
 
 const Input = () => {
   const messageContext = useContext(MessageContext);
@@ -11,7 +11,6 @@ const Input = () => {
 
   const [msgText, setMsgText] = useState("");
   const [typing, setTyping] = useState(false);
-  let timeout = null;
 
   const onSubmit = e => {
     e.preventDefault();
@@ -47,10 +46,9 @@ const Input = () => {
           value={msgText}
           onChange={e => {
             setMsgText(e.target.value);
-            setTyping(true)
-            clearTimeout(timeout)
-            timeout = setTimeout(()=>setTyping(false),1400)
+            setTyping(true);
           }}
+          onBlur={()=>setTyping(false)}
         />
         <button type="submit" className="send_btn">
           <img

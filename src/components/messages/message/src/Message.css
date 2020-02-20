@@ -22,39 +22,7 @@
 }
 
 .skycons{
-  max-width: 7rem;
-}
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-    and (min-device-width: 375px) 
-    and (min-device-height: 812px) 
-    and (-webkit-device-pixel-ratio: 3)
-    and (orientation: portrait) {
-      .message_container{
-        width: 100vw;
-      }
-
-      .skycons{
-        max-width: 14rem;
-      }
-     }
-
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-width: 667px) 
-and (-webkit-min-device-pixel-ratio: 2) { 
-  .message_container{
-    width: 100vw;
-  }
-
-  .skycons{
-    max-width: 14rem;
-  }
+  max-width: 10rem;
 }
 
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
@@ -69,6 +37,46 @@ and (-webkit-min-device-pixel-ratio: 2) {
     }
   
     .skycons{
-      width: 13rem;
+     display: none;
     }
 }
+
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2) { 
+  .message_container{
+    width: 100vw;
+  }
+
+  .skycons{
+    max-width: 10rem;
+    display: inline;
+  }
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) {
+      .message_container{
+        width: 100vw;
+      }
+
+      .skycons{
+        max-width: 11rem;
+        display: inline;
+      }
+     }
+
+
+

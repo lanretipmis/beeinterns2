@@ -17,13 +17,14 @@ width: 0px;
 height: 0px;
 }
 
-/* ----------- iPhone X ----------- */
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
     .message_container{
       padding: 0 2rem;
     }
@@ -41,14 +42,17 @@ height: 0px;
     }
 }
 
-/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
     .message_container{
       padding: 0 2rem;
     }
 }
+
+
